@@ -1,0 +1,90 @@
+/* =====================================================
+   AUSPIFY — Responsive Styles
+   Breakpoints: 1024px, 768px, 480px
+   ===================================================== */
+
+/* ===== TABLET (max 1024px) ===== */
+@media (max-width: 1024px) {
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  .hero-visual {
+    order: -1;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .visual-card { transform: none; }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== MOBILE (max 768px) ===== */
+@media (max-width: 768px) {
+  /* Mobile Menu */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--bg-soft);
+    border-left: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 100px var(--space-lg) var(--space-lg);
+    gap: var(--space-md);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+  }
+  .nav-menu.active { right: 0; }
+  .nav-link { font-size: 18px; }
+  .nav-link.active::after { display: none; }
+
+  .nav-actions .btn { display: none; }
+  .hamburger { display: flex; z-index: 1001; }
+
+  /* Hero */
+  .hero { padding: calc(var(--nav-height) + 40px) 0 60px; }
+  .hero-stats { gap: var(--space-md); }
+  .stat strong { font-size: 22px; }
+
+  /* Sections */
+  .services,
+  .contact { padding: var(--space-xl) 0; }
+
+  .cta-box { padding: var(--space-lg) var(--space-md); }
+}
+
+/* ===== SMALL MOBILE (max 480px) ===== */
+@media (max-width: 480px) {
+  .container { padding: 0 20px; }
+
+  .hero-title { font-size: 2rem; }
+  .hero-desc { font-size: 15px; }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons .btn { width: 100%; }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .section-head h2 { font-size: 1.6rem; }
+
+  .footer-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .btn-lg { padding: 12px 20px; font-size: 14px; }
+}
